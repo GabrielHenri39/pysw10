@@ -28,7 +28,7 @@ def cadastro_medico(request):
             messages.add_message(request, constants.WARNING, 'Você já é um médico.')
             return redirect(reverse('abrir_horario'))
         especialidades = Especialidades.objects.all()
-        return render(request, 'cadastro_medico.html', dados_medico_campos )
+        return render(request, 'cadastro_medico.html' )
     elif request.method == "POST":
        
         crm = request.POST.get('crm')
