@@ -23,7 +23,17 @@ class Consulta(models.Model):
     @property
     def quanto_falta_consulta(self):
 
-       return self.data_aberta.data.day -  datetime.now().day
+       res = self.data_aberta.data.day -  datetime.now().day
+       horias=  f"{self.data_aberta.data.hour}:{self.data_aberta.data.minute:02d}"
+       if res > 1:
+           return f"em {res} dias"
+       elif res == 1:
+           return f"em {res} dia"
+       elif  res == 0:
+           return f"Hoje às {horias}"
+       
+       
+       
 
     def __str__(self):
         return self.paciente.username

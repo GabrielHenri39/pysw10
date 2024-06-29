@@ -86,13 +86,13 @@
             <p class="bg-main-lembrete">
                 {% if consultas %}
                     {% for consultai in consultas %}
-                         <span class="p-bold"><i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp Consulta com Dr(a). {{consultai.data_aberta.user|title}} em {{consultai.quanto_falta_consulta}} dias.</span>
+                         <span class="p-bold"><i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp Consulta com Dr(a). {{consultai.data_aberta.user|title}}  {{consultai.quanto_falta_consulta}} </span>
                          <br>
                         {% endfor %}
            
                 {% elif consultas_medico  %} 
                         {% for com in consultas_medico %}
-                        <span class="p-bold"><i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp Consulta com Paciente {{com.paciente|title}} em {{com.quanto_falta_consulta}} dias.</span>
+                        <span class="p-bold"><i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp Consulta com Paciente {{com.paciente|title}} em {{com.quanto_falta_consulta}}.</span>
                         <br>
                         {% endfor %}    
                 {% endif %}
